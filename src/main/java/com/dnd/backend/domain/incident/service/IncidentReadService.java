@@ -57,7 +57,7 @@ public class IncidentReadService {
         return allIncidents.stream()
                 .map(incident -> {
                     double distance = calculateDistance(pointX, pointY,
-                            incident.getPointX(), incident.getPointY());
+                            incident.getPointY(), incident.getPointX());
                     return new IncidentDistanceDto(incident, distance);
                 })
                 .filter(dto -> dto.distance() <= radiusKm)
